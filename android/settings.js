@@ -5,8 +5,8 @@
 var fs = require('fs');
 
 var addProjectInclude = function(settings,packages){
-  var content = 'include \':app\\n'
-  +'include \':react-native-config\''
+  var content = 'include \':app\'\n'
+  +'include \':react-native-config\'\n'
   + 'project(\':react-native-config\').projectDir = new File(settingsDir, \'../node_modules/react-native-config/android\')\n';
 
   for(var projName in packages) {
