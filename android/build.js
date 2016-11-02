@@ -10,7 +10,6 @@ var _ = require('lodash');
  * 1. check dependency item existed
  * 2. add new dependency when dependency not existed
  *
- * dependencies ['air-umeng','air-rongcloud']
  */
 var buildGradle = function (gradleFile, dependencies) {
   //fs.readFile
@@ -27,7 +26,7 @@ var buildGradle = function (gradleFile, dependencies) {
           + '    compile \'com.facebook.react:react-native:+\'\n'
           + '    compile project(\':react-native-config\')\n';
       for (var key in dependencies) {
-        buildContent = buildContent + '    compile project(\':' + dependencies[key] + '\')\n';
+        buildContent = buildContent + '    compile project(\':' + key + '\')\n';
       }
     } else if (_.startsWith(line, '}') && found) {
       buildContent = buildContent + line + '\n';
