@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/airapps/air-proj-lib/issues"
   },
-  "homepage": "https://github.com/airapps/air-proj-lib#readme"
+  "homepage": "https://github.com/airapps/air-proj-lib#readme",
+  "dependencies": {
+    "xcode": "^0.8.9",
+    "linebyline": "^1.3.0",
+    "lodash": "^4.16.6",
+    "pixl-xml": "^1.0.10"
+  }
 }
