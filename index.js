@@ -23,7 +23,7 @@ var android = function(settings,build,manifest,java,packages,permissions){
  *
  * @param xProj '/Users/guguyanhua/github/airapps/ios/airapps.xcodeproj/project.pbxproj'
  * @param podfile
- * @param packages 
+ * @param packages
  * @param permissions {'com.apple.Push':1, 'com.apple.BackgroundModes':0}
  */
 var xcode = function(xProj,podfile,packages,permissions){
@@ -31,8 +31,18 @@ var xcode = function(xProj,podfile,packages,permissions){
   //TODO podfileHelper(podfile,packages)
 };
 
-android();
-xcode();
+android('/Users/guguyanhua/github/airapps/android/settings.gradle',
+    '/Users/guguyanhua/github/airapps/android/app/build.gradle',
+    '/Users/guguyanhua/github/airapps/android/app/src/main/AndroidManifest.xml',
+    null,
+    {'air-umeng':'../node_modules/air-umeng/android','air-rongcloud':'../node_modules/air-rongcloud/android'},
+    ['android.permission.ACCESS_FINE_LOCATION','android.permission.ACCESS_COARSE_LOCATION']
+    );
+xcode('/Users/guguyanhua/github/airapps/ios/airapps.xcodeproj/project.pbxproj',
+    null,
+    null,
+    {'com.apple.Push':1, 'com.apple.BackgroundModes':0}
+    );
 
 
 module.exports = {
